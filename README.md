@@ -64,4 +64,4 @@ Modelin tahminleri orijinal veri setine eklenir ve sonuçlar `Sonuc.csv` dosyas�
 
 ## İletişim
 
-Proje ile ilgili sorularınız için [uzayk20@gmail.com](mailto:uzayk20@gmail.com) adresinden iletişime geçebilirsiniz.
+Proje ile ilgili sorularınız için [uzayk204@gmail.com](mailto:uzayk204@gmail.com) adresinden iletişime geçebilirsiniz.
