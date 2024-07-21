@@ -7,6 +7,7 @@ Bu proje, video oyunlarının eleştirmen puanlarını tahmin etmek için bir Ra
 - [Kullanım](#kullanım)
 - [Proje Açıklaması](#proje-açıklaması)
 - [Veri Seti](#veri-seti)
+- [Korelasyon Grafiği](#korelasyon-grafiği)
 - [Model Eğitimi ve Değerlendirme](#model-eğitimi-ve-değerlendirme)
 - [Sonuçlar](#sonuçlar)
 
@@ -43,16 +44,21 @@ Bu proje, video oyunlarının belirli özelliklerini kullanarak eleştirmen puan
 
 ## Veri Seti
 
-Kullanılan veri seti `Video_Games_Data.csv` adlı dosyadır. Bu veri seti, aşağıdaki sütunları içermektedir:
+Bu projede kullanılan veri seti Video_Games_Data.csv dosyasıdır ve çeşitli video oyunları hakkında bilgiler içermektedir. Özellikler şunlardır:
+
 - title: Oyunun adı
-- console: Oyunun konsolu
+- console: Oyunun piyasaya sürüldüğü oyun konsolu
 - genre: Oyunun türü
-- publisher: Yayıncı
-- developer: Geliştirici
-- release_date: Yayınlanma tarihi
-- last_update: Son güncelleme tarihi
-- img: Resim URL'si
-- critic_score: Eleştirmen puanı
+- publisher: Oyunun yayıncısı
+- developer: Oyunun geliştiricisi
+- total_sales: Toplam satışlar
+- na_sales: Kuzey Amerika satışları
+- jp_sales: Japonya satışları
+- pal_sales: PAL bölgesi satışları
+- other_sales: Diğer bölgelerdeki satışlar
+
+## Korelasyon Grafiği
+Aşağıdaki grafikte, hangi özelliklerin eleştirmen puanını tahmin etmede daha etkili olduğunu görebilirsiniz. Özellikle total_sales, na_sales, pal_sales ve other_sales gibi satış rakamlarının eleştirmen puanını tahmin etmede önemli bir etkiye sahip olduğunu görmekteyiz.  
 
 ## Model Eğitimi ve Değerlendirme
 
