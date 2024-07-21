@@ -58,7 +58,8 @@ Bu projede kullanılan veri seti Video_Games_Data.csv dosyasıdır ve çeşitli 
 - other_sales: Diğer bölgelerdeki satışlar
 
 ## Korelasyon Grafiği
-Aşağıdaki grafikte, hangi özelliklerin eleştirmen puanını tahmin etmede daha etkili olduğunu görebilirsiniz. Özellikle total_sales, na_sales, pal_sales ve other_sales gibi satış rakamlarının eleştirmen puanını tahmin etmede önemli bir etkiye sahip olduğunu görmekteyiz.  
+Aşağıdaki grafikte, hangi özelliklerin eleştirmen puanını tahmin etmede daha etkili olduğunu görebilirsiniz. Özellikle total_sales, na_sales, pal_sales ve other_sales gibi satış rakamlarının eleştirmen puanını tahmin etmede önemli bir etkiye sahip olduğunu görmekteyiz.
+![Korelasyon Grafiği](korelasyon.png)
 
 ## Model Eğitimi ve Değerlendirme
 
