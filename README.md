@@ -1,63 +1,76 @@
-# IMDB Movies Prediction
+# Video Games Critic Score Prediction
 
-Bu proje, IMDB filmleri veri kümesi kullanarak film puanlarını tahmin etmek için bir sinir ağı modeli oluşturur. Model, PyTorch kütüphanesi kullanılarak eğitilmiştir.
+Bu proje, video oyunlarının eleştirmen puanlarını tahmin etmek için bir Random Forest modeli kullanır. Proje, belirli özelliklere sahip oyun verilerini işler ve bu verileri kullanarak bir tahmin modeli oluşturur.
 
-## Kullanılan Kütüphaneler
+## İçindekiler
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [Proje Açıklaması](#proje-açıklaması)
+- [Veri Seti](#veri-seti)
+- [Korelasyon Grafiği](#korelasyon-grafiği)
+- [Model Eğitimi ve Değerlendirme](#model-eğitimi-ve-değerlendirme)
+- [Sonuçlar](#sonuçlar)
 
-- `pandas` - Veri işleme ve analiz için
-- `torch` - Derin öğrenme ve sinir ağı oluşturma için
-- `sklearn` - Veriyi ön işleme ve model değerlendirme için
+## Kurulum
 
-## Veri Kümesi
+Gerekli paketleri yüklemek için aşağıdaki adımları izleyin:
 
-- `imdb_movies.csv`: IMDB filmleri hakkında çeşitli bilgiler içeren CSV dosyası.
+1. Gerekli Python paketlerini yükleyin:
+    
+bash
+    pip install pandas scikit-learn
 
-## Adımlar
 
-1. **Veri Yükleme ve Ön İşleme**
-   - Veriler CSV dosyasından yüklenir.
-   - Belirtilen sütunlar sayısal değerlere dönüştürülür.
-   - Eksik değerler ve gereksiz sütunlar temizlenir.
-   - Özellikler ve hedef değişken ayrılır.
-
-2. **Veri Bölme ve Ölçeklendirme**
-   - Veri eğitim ve test setlerine ayrılır.
-   - Özellikler standartlaştırılır.
-
-3. **PyTorch Veri Kümesi ve Veri Yükleyicileri**
-   - Veriler PyTorch tensorlerine dönüştürülür.
-   - Eğitim ve test veri kümesi ve veri yükleyicileri oluşturulur.
-
-4. **Model Tanımlama ve Eğitim**
-   - Bir sinir ağı modeli tanımlanır ve eğitilir.
-   - Modelin performansı epoch başına kayıp fonksiyonu ile izlenir.
-
-5. **Model Değerlendirme ve Tahmin**
-   - Model test verileri üzerinde değerlendirilir ve doğruluk metrikleri hesaplanır.
-   - Tüm veri kümesi üzerinde tahminler yapılır ve sonuçlar CSV dosyasına kaydedilir.
-
-## Model Yapısı
-
-- **Giriş Katmanı:** 3 özellik (budget_x, revenue, country)
-- **Gizli Katman 1:** 64 nöron
-- **Gizli Katman 2:** 32 nöron
-- **Çıkış Katmanı:** 1 nöron (puan tahmini)
-
-## Eğitim ve Değerlendirme
-
-- **Kayıp Fonksiyonu:** Ortalama Kare Hata (MSE)
-- **Optimizasyon Yöntemi:** Adam
-- **Epoch Sayısı:** 5000
-
-## Sonuçlar
-
-- Modelin tahminleri `Sonuc.csv` dosyasına kaydedilir.
-- Sayısal değerler, orijinal kategorik değerlerle geri dönüştürülür.
+2. Proje dosyasını klonlayın veya indirin.
 
 ## Kullanım
 
-Projenin çalıştırılması için gerekli kütüphanelerin yüklü olduğundan emin olun. Ardından Python kodunu çalıştırarak tahminler yapabilirsiniz.
+Proje dosyasını çalıştırmak için:
 
-```bash
-pip install pandas torch scikit-learn
-python main.py
+1. main.py dosyasını çalıştırın:
+    
+bash
+    python main.py
+
+
+## Proje Açıklaması
+
+Bu proje, video oyunlarının belirli özelliklerini kullanarak eleştirmen puanlarını tahmin eder. Model, RandomForestRegressor kullanarak oluşturulmuştur. Proje adımları aşağıdaki gibidir:
+
+1. Verilerin okunması ve işlenmesi
+2. Gerekli sütunların sayısal verilere dönüştürülmesi
+3. Verilerin eğitim ve test setlerine ayrılması
+4. Modelin eğitilmesi ve değerlendirilmesi
+5. Tahminlerin orijinal veri setine eklenmesi
+6. Sonuçların CSV dosyasına yazılması
+
+## Veri Seti
+
+Bu projede kullanılan veri seti Video_Games_Data.csv dosyasıdır ve çeşitli video oyunları hakkında bilgiler içermektedir. Özellikler şunlardır:
+
+- title: Oyunun adı
+- console: Oyunun piyasaya sürüldüğü oyun konsolu
+- genre: Oyunun türü
+- publisher: Oyunun yayıncısı
+- developer: Oyunun geliştiricisi
+- total_sales: Toplam satışlar
+- na_sales: Kuzey Amerika satışları
+- jp_sales: Japonya satışları
+- pal_sales: PAL bölgesi satışları
+- other_sales: Diğer bölgelerdeki satışlar
+
+## Korelasyon Grafiği
+Aşağıdaki grafikte, hangi özelliklerin eleştirmen puanını tahmin etmede daha etkili olduğunu görebilirsiniz. Özellikle total_sales, na_sales, pal_sales ve other_sales gibi satış rakamlarının eleştirmen puanını tahmin etmede önemli bir etkiye sahip olduğunu görmekteyiz.
+![Korelasyon Grafiği](korelasyon.png)
+
+## Model Eğitimi ve Değerlendirme
+
+Model, RandomForestRegressor kullanarak eğitilir ve test seti üzerinde değerlendirilir. Modelin doğruluğu mean_squared_error ile ölçülür.
+
+## Sonuçlar
+
+Modelin tahminleri orijinal veri setine eklenir ve sonuçlar Sonuc.csv dosyasına yazılır. Bu dosyada, her bir oyun için modelin tahmin ettiği eleştirmen puanları bulunur.
+
+## İletişim
+
+Proje ile ilgili sorularınız için [uzayk204@gmail.com](mailto:uzayk204@gmail.com) adresinden iletişime geçebilirsiniz.
