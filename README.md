@@ -10,6 +10,8 @@ Bu proje, video oyunlarının eleştirmen puanlarını tahmin etmek için bir Ra
 - [Korelasyon Grafiği](#korelasyon-grafiği)
 - [Model Eğitimi ve Değerlendirme](#model-eğitimi-ve-değerlendirme)
 - [Sonuçlar](#sonuçlar)
+- [Katkıda Bulunma](#katkıda-bulunma)
+- [Lisans](#lisans)
 
 ## Kurulum
 
@@ -74,3 +76,13 @@ Modelin tahminleri orijinal veri setine eklenir ve sonuçlar Sonuc.csv dosyasın
 ## İletişim
 
 Proje ile ilgili sorularınız için [uzayk204@gmail.com](mailto:uzayk204@gmail.com) adresinden iletişime geçebilirsiniz.
+
+## Katkıda Bulunma
+
+Katkılarınızı memnuniyetle kabul ediyoruz! Lütfen katkıda bulunmadan önce [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
+
+## Lisans
+
+Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
+
+
