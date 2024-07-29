@@ -31,7 +31,7 @@ Proje dosyasını çalıştırmak için:
 
 1. main.py dosyasını çalıştırın:
     
-bash'''
+'''bash
     python main.py
 '''
 
