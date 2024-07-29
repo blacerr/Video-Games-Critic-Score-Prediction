@@ -19,9 +19,9 @@ Gerekli paketleri yüklemek için aşağıdaki adımları izleyin:
 
 1. Gerekli Python paketlerini yükleyin:
     
-'''bash
-    pip install pandas scikit-learn
-'''
+```bash
+pip install pandas scikit-learn
+```
 
 2. Proje dosyasını klonlayın veya indirin.
 
@@ -31,9 +31,9 @@ Proje dosyasını çalıştırmak için:
 
 1. main.py dosyasını çalıştırın:
     
-'''bash
-    python main.py
-'''
+```bash
+python main.py
+```
 
 ## Proje Açıklaması
 
