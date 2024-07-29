@@ -19,7 +19,7 @@ Gerekli paketleri yüklemek için aşağıdaki adımları izleyin:
 
 1. Gerekli Python paketlerini yükleyin:
     
-bash'''
+'''bash
     pip install pandas scikit-learn
 '''
 
