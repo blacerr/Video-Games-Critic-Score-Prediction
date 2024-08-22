@@ -37,14 +37,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestRegressor(random_state=42)
 model.fit(X_train, y_train)
 
-# Modelin değerlendirilmesi
-y_pred = model.predict(X_test)  # Test verileri üzerinde tahminler yapma
-mse = mean_squared_error(y_test, y_pred)  # Ortalama kare hata metriği
-print(f'Dogruluk: {mse}')
-
 # Eğitim ve test verileri üzerinde tahminler yapma
 y_train_pred = model.predict(X_train)
 y_test_pred = model.predict(X_test)
+
+# Modelin değerlendirilmesi
+mse = mean_squared_error(y_test, y_test_pred)
+print('Dogruluk:', mse)
 
 # Tahminleri orijinal veri setine ekleme
 data['Tahminler'] = pd.NA  # Tüm satırlara NA değeri atama
@@ -55,16 +54,12 @@ data.loc[X_train.index, 'Tahminler'] = y_train_pred
 # Test verileri için tahminler ekleme
 data.loc[X_test.index, 'Tahminler'] = y_test_pred
 
-# Sonuçları orijinal veri setine ekleme
-data_with_predictions = data.copy()
-data_with_predictions.loc[X_test.index, 'Tahminler'] = y_pred
-
 # LabelEncoder nesneleri ile sayısal değerleri geri dönüştürme
 for column, encoder in label_encoders.items():
-    data_with_predictions[column] = encoder.inverse_transform(data_with_predictions[column].astype(int))
+    data[column] = encoder.inverse_transform(data[column].astype(int))
 
 # Sonuçları CSV'ye yazma
-data_with_predictions.to_csv('Sonuc.csv', index=False)
+data.to_csv('Sonuc.csv', index=False)
 
 # Sonuç dosyasını okuma ve yazdırma
 df = pd.read_csv('Sonuc.csv')
