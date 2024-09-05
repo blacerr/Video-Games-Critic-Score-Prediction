@@ -69,6 +69,8 @@ Aşağıdaki grafikte, hangi özelliklerin eleştirmen puanını tahmin etmede d
 
 Model, RandomForestRegressor kullanarak eğitilir ve test seti üzerinde değerlendirilir. Modelin doğruluğu mean_squared_error ile ölçülür.
 
+![Video_Games](Video_Games.png)
+
 ## Sonuçlar
 
 Modelin tahminleri orijinal veri setine eklenir ve sonuçlar Sonuc.csv dosyasına yazılır. Bu dosyada, her bir oyun için modelin tahmin ettiği eleştirmen puanları bulunur.
